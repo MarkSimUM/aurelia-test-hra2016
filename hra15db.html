@@ -1,0 +1,22 @@
+<template>
+
+
+    <p>Account (model: dataAcct)</p>
+    <div class="col-sm-6 col-md-5 card-container au-animate" repeat.for="acct of dataAcct.resource">
+        <p>Account Name [Parent]: ${acct.ACCOUNTNAME}</p>
+        <p>[Child:] CORE_ORGANIZATION_by_ACCOUNT_ID</p>
+        <div class="card">
+
+            <div class="content">
+
+                <div repeat.for="org of acct.CORE_ORGANIZATION_by_ACCOUNT_ID">
+
+                    <p>Org Name: ${org.ORGNAME}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</template>

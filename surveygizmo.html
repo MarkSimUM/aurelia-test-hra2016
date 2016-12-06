@@ -1,0 +1,32 @@
+<template>
+
+    <p>ID: ${data.data.id}</p>
+    <p>Languages: ${data.data.languages[0]}</p>
+    <p>Links.default ?: ${data.data.links.default}</p>
+    <div class="col-sm-3 col-md-4" repeat.for="survey of data.data">
+
+            <div class="card">
+            <div class="content">
+                <p>Survey ID: ${survey.id}: modified: ${survey.modified_on}</p>
+                <p class="name">Survey title:</p>
+                <p class="name">${survey.title}</p>
+                  
+                <p><a target="_blank" class="btn btn-default" href.bind="survey.links.edit">EDIT</a></p>
+                <p><a target="_blank" class="btn btn-default" href.bind="survey.links.publish">Publish</a></p>
+              </div>
+
+            </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="page of data.data.pages">
+        <div class="card">
+
+            <div class="content">
+                <p>Page ID: ${page.id}</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</template>
